@@ -9,32 +9,47 @@ import SwiftUI
 import CoreML
 
 struct ContentView: View {
-    @State private var wakeUp   = Date.now
+    @State private var wakeUp   = defaultTime
     @State private var sleepAmount  = 8.0
     @State private var coffeeAmount = 1
     
     @State private var alertTitle   = ""
     @State private var alertMessage = ""
     @State private var showAlert    = false
-    
+    static var defaultTime: Date {
+        var component = DateComponents()
+        component.hour      = 7
+        component.minute    = 0
+        return Calendar.current.date(from: component) ?? Date.now
+    }
     var body: some View {
         NavigationView {
-            VStack{
-                Text("When do you want to wake up?")
-                    .font(.headline)
-                DatePicker("Select time to wake up", selection: $wakeUp, displayedComponents: .hourAndMinute)
-                    .labelsHidden()
-                
-                Text("How many hours of sleep would you like?")
-                    .font(.headline)
-                Stepper("\(sleepAmount.formatted()) hours", value: $sleepAmount, in: 4...12, step: 0.25)
-                    .padding(.horizontal)
+            Form{
+                VStack (alignment: .leading, spacing: 0) {
+                    Text("When do you want to wake up?")
+                        .font(.headline)
                     
-                Text("Daily coffee intake")
-                    .font(.headline)
-                Stepper(coffeeAmount == 1 ? "1 cup" : "\(coffeeAmount) cups", value: $coffeeAmount, in: 1...20)
-                    .padding(.horizontal)
-            
+                    
+                    HStack{
+                        Spacer()
+                    DatePicker("Select time to wake up", selection: $wakeUp, displayedComponents: .hourAndMinute)
+                        .labelsHidden()
+                        .padding(.trailing)
+                }
+                }
+                VStack (alignment: .leading, spacing: 0) {
+                    Text("How many hours of sleep would you like?")
+                        .font(.headline)
+                    Stepper("\(sleepAmount.formatted()) hours", value: $sleepAmount, in: 4...12, step: 0.25)
+                        .padding(.horizontal)
+                    
+                }
+                VStack (alignment: .leading, spacing: 0) {
+                    Text("Daily coffee intake")
+                        .font(.headline)
+                    Stepper(coffeeAmount == 1 ? "1 cup" : "\(coffeeAmount) cups", value: $coffeeAmount, in: 1...20)
+                        .padding(.horizontal)
+                }
             }
             .navigationTitle("BettrRest")
             .toolbar {
@@ -74,7 +89,7 @@ struct ContentView: View {
             alertTitle      = "Oh no.."
             alertMessage    = "There was an error calculating your sleep time. Please try again."
         }
-            showAlert = true
+        showAlert = true
     }
 }
 
