@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31DFA68A27E2A31100B564F7 /* SleepCalculator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 31DFA68927E2A31100B564F7 /* SleepCalculator.mlmodel */; };
 		31E9A61A27E16084008BD9C1 /* BettrSleepApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E9A61927E16084008BD9C1 /* BettrSleepApp.swift */; };
 		31E9A61C27E16084008BD9C1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E9A61B27E16084008BD9C1 /* ContentView.swift */; };
 		31E9A61E27E16085008BD9C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31E9A61D27E16085008BD9C1 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		31DFA68927E2A31100B564F7 /* SleepCalculator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SleepCalculator.mlmodel; sourceTree = SOURCE_ROOT; };
 		31E9A61627E16084008BD9C1 /* BettrSleep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BettrSleep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31E9A61927E16084008BD9C1 /* BettrSleepApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BettrSleepApp.swift; sourceTree = "<group>"; };
 		31E9A61B27E16084008BD9C1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			children = (
 				31E9A61927E16084008BD9C1 /* BettrSleepApp.swift */,
 				31E9A61B27E16084008BD9C1 /* ContentView.swift */,
+				31DFA68927E2A31100B564F7 /* SleepCalculator.mlmodel */,
 				31E9A61D27E16085008BD9C1 /* Assets.xcassets */,
 				31E9A61F27E16085008BD9C1 /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31E9A61C27E16084008BD9C1 /* ContentView.swift in Sources */,
+				31DFA68A27E2A31100B564F7 /* SleepCalculator.mlmodel in Sources */,
 				31E9A61A27E16084008BD9C1 /* BettrSleepApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
